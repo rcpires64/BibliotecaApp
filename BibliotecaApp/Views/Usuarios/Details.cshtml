@@ -1,0 +1,48 @@
+﻿@model BibliotecaApp.Models.Usuario
+
+@{
+    ViewData["Title"] = "BibliotecaApp - Usuários Editar";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Biblioteca Senac Rio - Usuário - Detalhes</h1>
+<hr />
+
+<div class="col-md-6">
+    <table class="table table-light table-bordered">
+        <input type="hidden" asp-for="Id" />
+        <tr>
+            <td class="col-md-2">Nome:</td>
+            <td>
+                <div class="form-group">
+                    @Html.DisplayFor(model => model.Nome)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-2">E-mail:</td>
+            <td>
+                <div class="form-group">
+                    @Html.DisplayFor(model => model.Email)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-2">Senha:</td>
+            <td>
+                <div class="form-group">
+                    @Html.DisplayFor(model => model.Senha)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="form-group">
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a> |
+                    <a asp-action="Index" class="btn btn-primary">Voltar à Lista</a>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
